@@ -1,0 +1,182 @@
+.help {
+  position: relative;
+  padding-bottom: 180px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+
+  &__box-link {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 27px 31px;
+  }
+
+  &__box {
+    width: 32%;
+    position: relative;
+    height: 260px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -160px;
+      display: block;
+      width: 70px;
+      height: 400px;
+      background: #fff;
+      opacity: 0.1;
+      pointer-events: none;
+      transform: rotate(30deg);
+    }
+
+
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      transition: .5s;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: $font2;
+      color: $gray;
+      line-height: 140%;
+
+      &.white {
+        color: $white;
+      }
+    }
+
+    &:hover::before {
+      animation: blick 0.5s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.cirlce2 {
+  position: absolute;
+  top: -80px;
+  right: 20px;
+  z-index: -1;
+  animation: cirlce 120s;
+}
+
+@keyframes cirlce {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes blick {
+  0% {
+    left: -160px;
+  }
+
+  100% {
+    left: 500px;
+  }
+}
+
+
+
+@media (max-width:1050px) {
+  .help__box {
+    height: 230px;
+  }
+
+  .cirlce2 {
+    display: none;
+  }
+
+  .help__wrapper {
+    margin-top: 40px;
+  }
+
+
+
+  .help__box-link {
+    padding-left: 20px;
+  }
+
+  .help__box p {
+    font-size: 18px;
+  }
+
+  .help {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width:900px) {
+  .help__box {
+    width: 48.5%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:600px) {
+  .help__box {
+    height: 190px;
+  }
+
+  .help__box p {
+    font-size: 15px;
+  }
+
+  .help__box-link {
+    padding-left: 13px;
+  }
+}
+
+@media (max-width:5502px) {}
+
+@media (max-width:475px) {
+  .help__box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    height: 290px;
+  }
+
+  .help .subtitle {
+    padding-right: 5px;
+  }
+
+  .help__box p {
+    font-size: 20px;
+  }
+
+  .help__box-link {
+    padding-left: 20px;
+    padding-bottom: 15px;
+  }
+
+}
+
+@media (max-width:350px) {}
